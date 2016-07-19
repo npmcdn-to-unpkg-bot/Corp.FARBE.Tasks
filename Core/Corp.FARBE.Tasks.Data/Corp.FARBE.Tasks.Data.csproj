@@ -84,7 +84,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -135,15 +137,15 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DBAmbar.dbml.layout">
-      <DependentUpon>DBAmbar.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Corp.FARBE.Tasks.Domain\Corp.FARBE.Tasks.Domain.csproj">
       <Project>{20FEF19E-1326-4A4D-B543-BFAE8D05AA8D}</Project>
       <Name>Corp.FARBE.Tasks.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBAmbar.dbml.layout">
+      <DependentUpon>DBAmbar.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

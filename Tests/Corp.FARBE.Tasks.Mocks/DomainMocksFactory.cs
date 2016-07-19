@@ -15,9 +15,13 @@ namespace Corp.FARBE.Tasks.Mocks
         public static DateTime CHANGE_DATE = new DateTime(2016, 1, 1);
         public const string MODIFIED_PERSON = "MY DOMAIN PERSON";
 
-        public static Musteri CreateMusteri()
+        public static Musteri_Table CreateMusteri()
         {
-            return Musteri.Create(MUSTERI_NAME, GOREV, USERNAME, CHANGE_DATE, MODIFIED_PERSON);
+            Musteri_Table musteri = new Musteri_Table();
+            musteri.Musteri_Name = MUSTERI_NAME;
+            musteri.User_name = USERNAME;
+            musteri.Change_Date = CHANGE_DATE;
+            return musteri;
         }
     }
 }

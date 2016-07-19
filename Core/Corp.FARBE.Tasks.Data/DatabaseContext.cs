@@ -10,7 +10,7 @@ namespace Corp.FARBE.Tasks.Data
     public class DatabaseContext : DbContext
     {
         public DbSet<Musteri> Musteriler { get; set; }
-
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.AddFromAssembly(typeof(DatabaseContext).Assembly);

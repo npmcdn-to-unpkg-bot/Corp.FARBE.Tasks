@@ -13,19 +13,20 @@ namespace Corp.FARBE.Tasks.Data.Test
         [TestMethod]
         public void Musteri_CanBe_Saved()
         {
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                Musteri musteri = DomainMocksFactory.CreateMusteri();
-                context.Musteriler.Add(musteri);
+                Musteri_Table musteri = DomainMocksFactory.CreateMusteri();
+                context.Musteri_Tables.InsertOnSubmit(musteri);
 
-                context.SaveChanges();
+                context.SubmitChanges();
             }
 
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                var result = context.Musteriler.Where(x => x.Musteri_Name == DomainMocksFactory.MUSTERI_NAME);
-                Musteri musteri = result.FirstOrDefault();
-                Assert.IsNotNull(musteri);
+
+                var result = context.ExecuteQuery<Musteri_Table>("select * from dbo.Musteri_Table where Musteri_Name = {0}", DomainMocksFactory.MUSTERI_NAME);
+                Musteri_Table musteri = result.FirstOrDefault();
+                Assert.AreEqual(musteri.Musteri_Name,DomainMocksFactory.MUSTERI_NAME);
             }
         }
 
@@ -33,26 +34,26 @@ namespace Corp.FARBE.Tasks.Data.Test
         [TestMethod]
         public void Musteri_CanBe_Modified()
         {
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                Musteri musteri = DomainMocksFactory.CreateMusteri();
-                context.Musteriler.Add(musteri);
+                Musteri_Table musteri = DomainMocksFactory.CreateMusteri();
+                context.Musteri_Tables.InsertOnSubmit(musteri);
 
-                context.SaveChanges();
+                context.SubmitChanges();
             }
 
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                var result = context.Musteriler.Where(x => x.Musteri_Name == DomainMocksFactory.MUSTERI_NAME);
-                Musteri musteri = result.FirstOrDefault();
-                musteri.ModifyName("Modified");
-                context.SaveChanges();
+                var result = context.Musteri_Tables.Where(x => x.Musteri_Name == DomainMocksFactory.MUSTERI_NAME);
+                Musteri_Table musteri = result.FirstOrDefault();
+                musteri.Musteri_Name = "Modified";
+                context.SubmitChanges();
             }
 
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                var result = context.Musteriler.Where(x => x.Musteri_Name == "Modified");
-                Musteri musteri = result.FirstOrDefault();
+                var result = context.Musteri_Tables.Where(x => x.Musteri_Name == "Modified");
+                Musteri_Table musteri = result.FirstOrDefault();
                 Assert.IsTrue(musteri.Musteri_Name == "Modified");
             }
         }
@@ -60,25 +61,26 @@ namespace Corp.FARBE.Tasks.Data.Test
         [TestMethod]
         public void Musteri_CanBe_Deleted()
         {
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                Musteri musteri = DomainMocksFactory.CreateMusteri();
-                context.Musteriler.Add(musteri);
+                Musteri_Table musteri = DomainMocksFactory.CreateMusteri();
+                context.Musteri_Tables.InsertOnSubmit(musteri);
 
-                context.SaveChanges();
+                context.SubmitChanges();
             }
 
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                var result = context.Musteriler.Where(x => x.Musteri_Name == DomainMocksFactory.MUSTERI_NAME);
-                Musteri musteri = result.FirstOrDefault();
-                context.Musteriler.Remove(musteri);
-                context.SaveChanges();
+                var result = context.Musteri_Tables.Where(x => x.Musteri_Name == DomainMocksFactory.MUSTERI_NAME);
+                Musteri_Table musteri = result.FirstOrDefault();
+                context.Musteri_Tables.DeleteOnSubmit(musteri);
+                context.SubmitChanges();
             }
 
-            using (DatabaseContext context = new DatabaseContext())
+            using (DBAmbarDataContext context = new DBAmbarDataContext())
             {
-                Musteri musteri = context.Musteriler.FirstOrDefault();
+                var result = context.Musteri_Tables.Where(x => x.Musteri_Name == DomainMocksFactory.MUSTERI_NAME);
+                Musteri_Table musteri = result.FirstOrDefault();
                 Assert.IsNull(musteri);
             }
         }

@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DBAmbar">
   <DataContextMoniker Name="/DBAmbarDataContext" />
   <nestedChildShapes>
-    <classShape Id="05ce0413-6328-4c2b-b06c-9051251d38f5" absoluteBounds="7.625, 2.125, 2, 1.9631982421875">
+    <classShape Id="2ea46fc1-f0f9-4bba-928b-927bc0916e86" absoluteBounds="7.625, 2.625, 2, 1.9631982421875">
       <DataClassMoniker Name="/DBAmbarDataContext/Musteri_Table" />
       <nestedChildShapes>
-        <elementListCompartment Id="a88e9d8a-8071-4d73-b7e3-d947184e1c27" absoluteBounds="7.64, 2.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="51beb269-3bc7-499e-accf-76b11a6a374a" absoluteBounds="7.64, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
