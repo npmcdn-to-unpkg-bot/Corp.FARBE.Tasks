@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AMBAR" Class="DBAmbarDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=QSVR\SQLEXPRESS;Initial Catalog=AMBAR;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AMBARConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Musteri_Table" Member="Musteri_Tables">
+    <Type Name="Musteri_Table">
+      <Column Name="Musteri_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Musteri_Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Gorev" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="User_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Change_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modified_Person" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
