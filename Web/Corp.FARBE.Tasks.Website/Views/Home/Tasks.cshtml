@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Tasks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tasks</h2>
+<br />
+<div ng-controller="taskController">
+        <div class="form-group">
+            <label>Write something: </label>
+            <input type="text" ng-model="filter.address" class="form-control" />
+            <span>{{filter.address}}</span>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="search()">Submit</button>
+</div>
+

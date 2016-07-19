@@ -26,5 +26,12 @@ namespace Corp.FARBE.Tasks.Website.Controllers
 
             return View();
         }
+
+        public ActionResult Tasks()
+        {
+            ViewBag.Message = "FARBE Tasks Definiton";
+
+            return View();
+        }
     }
 }
