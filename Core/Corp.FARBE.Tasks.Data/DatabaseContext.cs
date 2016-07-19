@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Corp.FARBE.Tasks.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace Corp.FARBE.Tasks.Data
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<Musteri_Table> Musteriler { get; set; }
+        public DbSet<Musteri> Musteriler { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

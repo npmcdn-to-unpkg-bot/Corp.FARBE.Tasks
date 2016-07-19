@@ -139,6 +139,12 @@
       <DependentUpon>DBAmbar.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Corp.FARBE.Tasks.Domain\Corp.FARBE.Tasks.Domain.csproj">
+      <Project>{20FEF19E-1326-4A4D-B543-BFAE8D05AA8D}</Project>
+      <Name>Corp.FARBE.Tasks.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

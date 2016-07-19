@@ -45,6 +45,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -59,12 +60,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="MusteriTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Corp.FARBE.Tasks.Data\Corp.FARBE.Tasks.Data.csproj">
+      <Project>{6D0D9DAA-4AC7-460F-8A38-20F91602452E}</Project>
+      <Name>Corp.FARBE.Tasks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Corp.FARBE.Tasks.Domain\Corp.FARBE.Tasks.Domain.csproj">
+      <Project>{20FEF19E-1326-4A4D-B543-BFAE8D05AA8D}</Project>
+      <Name>Corp.FARBE.Tasks.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corp.FARBE.Tasks.Mocks\Corp.FARBE.Tasks.Mocks.csproj">
+      <Project>{CDA8D9E8-4310-419E-8841-5686D1540D68}</Project>
+      <Name>Corp.FARBE.Tasks.Mocks</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

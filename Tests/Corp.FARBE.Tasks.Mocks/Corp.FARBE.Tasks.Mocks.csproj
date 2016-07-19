@@ -114,6 +114,16 @@
     <Compile Include="DomainMocksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Corp.FARBE.Tasks.Data\Corp.FARBE.Tasks.Data.csproj">
+      <Project>{6D0D9DAA-4AC7-460F-8A38-20F91602452E}</Project>
+      <Name>Corp.FARBE.Tasks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Corp.FARBE.Tasks.Domain\Corp.FARBE.Tasks.Domain.csproj">
+      <Project>{20FEF19E-1326-4A4D-B543-BFAE8D05AA8D}</Project>
+      <Name>Corp.FARBE.Tasks.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
