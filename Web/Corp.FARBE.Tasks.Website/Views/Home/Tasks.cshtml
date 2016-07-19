@@ -1,17 +1,42 @@
 ﻿
 @{
-    ViewBag.Title = "Tasks";
+    ViewBag.Title = ViewBag.Message;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Tasks</h2>
 <br />
 <div ng-controller="taskController">
-        <div class="form-group">
-            <label>Write something: </label>
-            <input type="text" ng-model="filter.address" class="form-control" />
-            <span>{{filter.address}}</span>
-        </div>
-        <button type="button" class="btn btn-default" ng-click="search()">Submit</button>
+    <div class="form-group">
+        <label>Write something: </label>
+        <input type="text" ng-model="filter.address" class="form-control" />
+        <span>{{filter.address}}</span>
+    </div>
+    <button type="button" class="btn btn-default" ng-click="search()">Submit</button>
+    <br />
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Müşteri</th>
+                    <th>MT</th>
+                    <th>MT ASIS.</th>
+                    <th>KS</th>
+                    <th>KS ASIS.</th>
+                    <th>Tasarim</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="filter in filters">
+                    <td>{{filter.street}}</td>
+                    <td>{{filter.address}}</td>
+                    <td>{{filter.city}}</td>
+                    <td>{{filter.zipCode}}</td>
+                    <td>{{filter.type}}</td>
+                    <td>{{filter.take}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
