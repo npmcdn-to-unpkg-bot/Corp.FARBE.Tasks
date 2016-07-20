@@ -21,6 +21,8 @@ namespace Corp.FARBE.Tasks.Mocks
             musteri.Musteri_Name = MUSTERI_NAME;
             musteri.User_name = USERNAME;
             musteri.Change_Date = CHANGE_DATE;
+            musteri.Gorev = GOREV;
+            musteri.Modified_Person = MODIFIED_PERSON;
             return musteri;
         }
     }

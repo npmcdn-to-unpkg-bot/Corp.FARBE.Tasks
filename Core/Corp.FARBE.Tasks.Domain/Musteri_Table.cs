@@ -6,24 +6,28 @@ using System.Web;
 
 namespace Corp.FARBE.Tasks.Domain
 {
-    public class Musteri
+    public class Musteri_Table
     {
         [Key]
-        public int Musteri_ID { get; private set; }
+        public int Musteri_ID { get; set; }
 
-        public string Musteri_Name { get; private set; }
+        [StringLength(250)]
+        public string Musteri_Name { get; set; }
 
-        public string Gorev { get; private set; }
+        [StringLength(100)]
+        public string Gorev { get; set; }
 
-        public string User_name { get; private set; }
+        [StringLength(200)]
+        public string User_name { get; set; }
 
-        public DateTime Change_Date { get; private set; }
+        public DateTime? Change_Date { get; set; }
 
-        public string Modified_Person { get; private set; }
+        [StringLength(200)]
+        public string Modified_Person { get; set; }
 
-        public static Musteri Create(string Musteri_Name, string Gorev, string User_name, DateTime Change_Date, string Modified_Person)
+        public static Musteri_Table Create(string Musteri_Name, string Gorev, string User_name, DateTime Change_Date, string Modified_Person)
         {
-            var musteri = new Musteri
+            var musteri = new Musteri_Table
             {
                 Musteri_Name= Musteri_Name,
                 Gorev= Gorev,
