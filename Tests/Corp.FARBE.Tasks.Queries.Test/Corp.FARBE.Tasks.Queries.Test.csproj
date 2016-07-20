@@ -59,12 +59,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="QueryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Corp.FARBE.Tasks.Queries\Corp.FARBE.Tasks.Queries.csproj">
+      <Project>{10182B8A-7B01-44DC-BA39-0C6CC604D3A6}</Project>
+      <Name>Corp.FARBE.Tasks.Queries</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -119,6 +119,7 @@
   <ItemGroup>
     <Compile Include="Message\MusteriListItem.cs" />
     <Compile Include="Message\MusteriModifyRequest.cs" />
+    <Compile Include="Message\MusteriLoadResponse.cs" />
     <Compile Include="Message\MusteriModifyResponse.cs" />
     <Compile Include="Projection\MusteriProjections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

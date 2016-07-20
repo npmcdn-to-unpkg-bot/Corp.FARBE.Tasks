@@ -1,10 +1,37 @@
 ﻿var tasksApp = angular.module('tasksApp', []);
+var apiUrl = 'http://localhost:60189/';
 
 tasksApp.controller('taskController',function($scope,$http,$q){
     
     $scope.loding = false;
-    $scope.testText = "ANGULAR JS WORKED FINE...";
-    $scope.getText = "ANGULAR JS WORKED FINE..11.";
+    $scope.totalRows = 0;
+    $scope.musteriler ;
+
+
+    $scope.load = function GetMusteriler() {
+        
+        $scope.loading = true;
+
+        var request = {
+            method: 'POST',
+            url: apiUrl + 'api/Musteriler',
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': '500'
+            }
+        }
+        $http(request)
+        .success(function (result) {
+            $scope.musteriler = result.Items;
+            $scope.totalRows = result.TotalRecords;
+            $scope.loading = false;
+        }).error(function (data, status, headers, config) {
+            $scope.musteriler = [{ Musteri_Name: status }, { Musteri_Name: "test2" }, { Musteri_Name: "test3" }];
+            $scope.loading = false;
+        });
+        
+    };
+
 
     $scope.filters =[{
         street: "ANGULAR JS ...",

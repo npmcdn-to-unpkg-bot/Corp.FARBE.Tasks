@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,6 +15,20 @@ namespace Corp.FARBE.Tasks.Queries.Messages
 
         [DataMember]
         public string Musteri_Name { get; set; }
+
+        [DataMember]
+        public MusteriTasksItem musteri_Tasks { get; set; }
+
+        [DataMember]
+        public IList AllUsers { get; set; }
+    }
+
+
+    [DataContract]
+    public class MusteriTasksItem
+    {
+        [DataMember]
+        public string Gorev { get; set; }
 
         [DataMember]
         public string User_name { get; set; }

@@ -10,13 +10,13 @@ namespace Corp.FARBE.Tasks.Queries.Messages
     public class MusteriModifyRequest
     {
         [DataMember]
-        public int Musteri_ID { get; set; }
-
-        [DataMember]
         public string Musteri_Name { get; set; }
 
         [DataMember]
         public string User_name { get; set; }
+
+        [DataMember]
+        public string Gorev { get; set; }
 
         [DataMember]
         public int Take { get; set; }

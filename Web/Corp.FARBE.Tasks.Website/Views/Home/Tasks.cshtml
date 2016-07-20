@@ -12,7 +12,7 @@
         <input type="text" ng-model="filter.address" class="form-control" />
         <span>{{filter.address}}</span>
     </div>
-    <button type="button" class="btn btn-default" ng-click="search()">Submit</button>
+    <button type="button" class="btn btn-default" ng-click="load()">Submit</button>
     <br />
     <div>
         <table>
@@ -34,6 +34,31 @@
                     <td>{{filter.zipCode}}</td>
                     <td>{{filter.type}}</td>
                     <td>{{filter.take}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Müşteri</th>
+                    <th>MT</th>
+                    <th>MT ASIS.</th>
+                    <th>KS</th>
+                    <th>KS ASIS.</th>
+                    <th>Tasarim</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="musteri in musteriler">
+                    <td>{{musteri.Musteri_Name}}</td>
+                    <td>{{musteri.Musteri_Name}}</td>
+                    <td>{{musteri.Musteri_Name}}</td>
+                    <td>{{musteri.Musteri_Name}}</td>
+                    <td>{{musteri.Musteri_Name}}</td>
+                    <td>{{musteri.Musteri_Name}}</td>
                 </tr>
             </tbody>
         </table>
